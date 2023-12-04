@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/loginCss/login.css">
+</head>
+<body>
+<div class="login-wrap">
+    <div class="login-html">
+        <a id="tab-1"  name="tab" class="sign-in" href="/login"><span class="tab">Sign In</span></a>
+        <input id="tab-2" type="radio" name="tab" class="sign-up" checked><span class="tab">Sign Up</span>
+        <div class="login-form">
+            <form method="post" th:action="@{handle-register}" th:object="${form_register}">
+                <div class="sign-in-htm" style="display: none"></div>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user1" class="label">Username</label>
+                        <input id="user1" type="text" class="input" th:field="*{userName}">
+                    </div>
+                    <div class="group">
+                        <label for="pass1" class="label">Password</label>
+                        <input id="pass1" type="password" class="input" data-type="password" th:field="*{password}">
+                    </div>
+                    <div class="group">
+                        <label for="rePass1" class="label">Repeat Password</label>
+                        <input id="rePass1" type="password" class="input" data-type="password" th:field="*{rePassword}">
+                    </div>
+                    <div class="group">
+                        <label for="email1" class="label">Email Address</label>
+                        <input id="email1" type="text" class="input" th:field="*{email}">
+                    </div>
+                    <div class="group">
+                        <label for="fullName" class="label">FullName</label>
+                        <input id="fullName" type="text" class="input" th:field="*{fullName}">
+                    </div>
+                    <div class="group">
+                        <button type="submit" class="button" value="Sign Up"></button>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a for="tab-1">Already Member?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
